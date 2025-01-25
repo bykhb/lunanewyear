@@ -43,6 +43,7 @@ h1 {
     min-height: 150px;
     cursor: pointer;
     perspective: 1000px;
+    transform-style: preserve-3d;
 }
 
 .gift-box {
@@ -296,5 +297,10 @@ h2 {
     
     .gift-box {
         -webkit-transform-style: preserve-3d;
+    }
+    
+    .gift-content {
+        -webkit-backface-visibility: hidden;
+        -webkit-transform: rotateY(180deg);
     }
 } 
