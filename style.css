@@ -277,14 +277,18 @@ h2 {
     }
 
     .gift-content {
+        position: absolute;
         width: 260px;
         height: 480px;
-        transform: rotateY(180deg) translateX(-50%);  /* transform 수정 */
-        left: 50%;  /* 중앙 정렬을 위한 위치 조정 */
+        transform: rotateY(180deg) translateX(-50%);
+        left: 50%;
+        top: -100px;
+        backface-visibility: visible;  /* 뒷면 보이게 설정 */
+        z-index: 1;  /* 레이어 순서 지정 */
     }
 
     .gift-wrapper.active .gift-box {
-        transform: rotateY(180deg);  /* 회전 동작 명시적 지정 */
+        transform: rotateY(180deg);
     }
 }
 
