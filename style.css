@@ -66,17 +66,23 @@ h1 {
 
 .gift-content {
     background: white;
-    transform: translateX(-50%) rotateY(180deg);  /* 중앙 정렬 + 뒤집기 */
-    padding: 20px;
+    transform: translateX(-50%) rotateY(180deg);
+    padding: calc(1rem + 2vw);  /* 반응형 패딩 */
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 280px;
-    height: 500px;
-    left: 50%;  /* 중앙 정렬을 위한 위치 조정 */
+    width: calc(200px + 15vw);  /* 반응형 너비 */
+    height: calc(400px + 15vw);  /* 반응형 높이 */
+    max-width: 300px;  /* 최대 너비 제한 */
+    max-height: 600px;  /* 최대 높이 제한 */
+    min-width: 240px;  /* 최소 너비 제한 */
+    min-height: 450px;  /* 최소 높이 제한 */
+    left: 50%;
+    top: 50%;
+    transform-origin: center center;
 }
 
 .gift-wrapper.active .gift-box {
@@ -101,29 +107,33 @@ h1 {
 }
 
 .company-logo {
-    width: 100px;
-    height: 100px;
+    width: calc(60px + 2vw);
+    height: calc(60px + 2vw);
+    max-width: 100px;
+    max-height: 100px;
     object-fit: contain;
-    margin: 0 auto 20px;
+    margin: 0 auto calc(10px + 1vw);
 }
 
 .product-image {
-    width: 140px;
-    height: 140px;
+    width: calc(100px + 2vw);
+    height: calc(100px + 2vw);
+    max-width: 140px;
+    max-height: 140px;
     object-fit: contain;
-    margin: 20px auto;
+    margin: calc(10px + 1vw) auto;
 }
 
 h2 {
-    font-size: 1.8em;
+    font-size: calc(1.2em + 0.5vw);
     color: #555;
-    margin: 0 0 20px 0;
+    margin: 0 0 calc(10px + 1vw) 0;
 }
 
 .description {
     color: #666;
-    font-size: 1.2em;
-    margin: 30px 0;
+    font-size: calc(0.9em + 0.3vw);
+    margin: calc(15px + 1vw) 0;
     line-height: 1.6;
 }
 
@@ -131,7 +141,7 @@ h2 {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    margin: 40px 0;
+    margin: calc(20px + 1.5vw) 0;
 }
 
 .data h3 {
@@ -150,14 +160,14 @@ h2 {
     background: #FF69B4;
     color: white;
     border: none;
-    padding: 12px 30px;
+    padding: calc(8px + 0.5vw) calc(20px + 1vw);
     border-radius: 5px;
-    font-size: 1.2em;
+    font-size: calc(1em + 0.2vw);
     cursor: pointer;
     transition: transform 0.3s;
     font-family: 'Jua', sans-serif;
-    margin-top: auto;
-    margin-bottom: 20px;
+    margin-top: auto;  /* 버튼을 항상 아래에 위치 */
+    margin-bottom: calc(10px + 1vw);
 }
 
 .select-btn:hover {
@@ -239,9 +249,23 @@ h2 {
     }
 
     .gift-content {
-        width: 240px;  /* 카드 크기 줄임 */
-        height: 450px;
         padding: 15px;
+        width: 240px;
+        height: 450px;
+        font-size: 0.9em;  /* 전체적인 폰트 크기 조정 */
+    }
+
+    .description {
+        margin: 15px 0;
+    }
+
+    .data {
+        margin: 20px 0;
+    }
+
+    .select-btn {
+        padding: 10px 20px;
+        margin-bottom: 15px;
     }
 }
 
@@ -254,6 +278,7 @@ h2 {
     .gift-content {
         width: 260px;
         height: 480px;
+        padding: 20px;
     }
 }
 
