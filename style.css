@@ -270,16 +270,21 @@ h2 {
     }
 }
 
-/* 태블릿 디바이스 대응 */
+/* 태블릿(아이패드) 크롬 대응 */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .container {
         gap: 1.5rem;
     }
 
     .gift-content {
-        width: 360px;
-        height: 580px;
-        padding: 30px;
+        width: 260px;
+        height: 480px;
+        transform: rotateY(180deg) translateX(-50%);  /* transform 수정 */
+        left: 50%;  /* 중앙 정렬을 위한 위치 조정 */
+    }
+
+    .gift-wrapper.active .gift-box {
+        transform: rotateY(180deg);  /* 회전 동작 명시적 지정 */
     }
 }
 
